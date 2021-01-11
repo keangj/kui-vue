@@ -7,7 +7,7 @@ import Doc from './views/Doc.vue'
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/about', component: Doc },
+  { path: '/doc', component: Doc },
 ]
 
 const router = createRouter({
