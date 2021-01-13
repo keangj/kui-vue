@@ -10,8 +10,10 @@ export default {
   components: {
   },
   setup () {
-    const menuVisible = ref(false)
-    provide('xxx', menuVisible)
+    const screenWidth = document.documentElement.clientWidth
+    const menuVisible = ref(screenWidth >= 500 ? true : false)
+    provide('menuVisible', menuVisible)
+    
   }
 }
 </script>
