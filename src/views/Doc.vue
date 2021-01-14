@@ -17,7 +17,7 @@
         </ol>
       </aside>
       <main>
-        
+        <router-view></router-view>
       </main>
     </div>
   </div>
