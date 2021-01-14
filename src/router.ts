@@ -2,15 +2,16 @@ import { createRouter, createWebHashHistory }  from 'vue-router'
 
 import Home from './views/Home.vue'
 import Doc from './views/Doc.vue'
-import HelloWorld from './views/HelloWorld.vue'
+import SwitchDemo from './components/SwitchDemo.vue'
 
 const routes = [
   { path: '/', component: Home },
   { 
-    path: '/doc', component: Doc,
-    children: [{
-      path: 'switch', component: HelloWorld,
-    }]
+    path: '/doc', 
+    component: Doc,
+    children: [
+      { path: 'switch', component: SwitchDemo }
+    ]
   },
 ]
 export const router = createRouter({

@@ -25,7 +25,10 @@ export default {
 
 <style lang="scss">
 .topnav {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
   display: flex;
   justify-content: center;
