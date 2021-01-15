@@ -1,13 +1,14 @@
 <template>
-swite
+  <Switch />
 </template>
 
 <script lang="ts">
-import { inject, Ref } from 'vue'
-export default {
-    setup () {
+import Switch from '../lib/Switch.vue';
 
-    }
+export default {
+  components: {
+    Switch
+  }
 }
 </script>
 
