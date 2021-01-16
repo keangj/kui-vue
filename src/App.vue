@@ -15,7 +15,6 @@ export default {
     const menuVisible = ref(screenWidth >= 500 ? true : false);
     provide('menuVisible', menuVisible)
     router.afterEach(() => {
-      console.log(12312);
       if (screenWidth <= 500) {
         menuVisible.value = false;
       }
