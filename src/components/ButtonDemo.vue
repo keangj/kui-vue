@@ -2,6 +2,10 @@
   <Button @click="onClick" @focus="onClick" @mouseenter="onClick">hi</Button>
   <Button @click="onClick" @focus="onClick" @mouseenter="onClick" theme="text">hi</Button>
   <Button @click="onClick" @focus="onClick" @mouseenter="onClick" theme="link">hi</Button>
+  <Button @click="onClick" @focus="onClick" @mouseenter="onClick" theme="link" size="big">hi</Button>
+  <Button @click="onClick" @focus="onClick" @mouseenter="onClick" size="small">hi</Button>
+  <Button @click="onClick" @focus="onClick" @mouseenter="onClick" size="normal">hi</Button>
+  <Button @click="onClick" @focus="onClick" @mouseenter="onClick" size="big">hi</Button>
 </template>
 
 <script lang="ts">

@@ -1,20 +1,32 @@
 <template>
-  <button class="quick-button" :class="{[`quick-theme-${theme}`]: theme}">
+  <button class="quick-button" :class="classes">
     <slot/>
   </button>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 export default {
   props: {
     theme: {
       type: String,
       default: 'button'
+    },
+    size: {
+      type: String,
+      default: 'normal'
     }
   },
   setup (props, context) {
     console.log({[`theme-${props.theme}`]: props.theme});
+    const { theme, size } = props;
+    const classes = computed(() => {
+      return {
+        [`quick-theme-${theme}`]: theme,
+        [`quick-size-${size}`]: size
+      }
+    });
+    return { classes }
   }
 }
 </script>
@@ -68,6 +80,28 @@ export default {
       &:hover,&:focus{
         background: darken(white, 5%);;
       }
+    }
+    &.quick-theme-button{
+      &.quick-size-big{
+        font-size: 24px;
+        height: 48px;
+        padding: 0 16px
+      }
+      &.quick-size-small{
+        font-size: 12px;
+        height: 20px;
+        padding: 0 4px;
+      }
+    }
+     &.quick-size-big {
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px;
+    }
+    &.quick-size-small {
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
     }
   }
 </style>
