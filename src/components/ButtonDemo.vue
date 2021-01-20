@@ -1,5 +1,7 @@
 <template>
   <Button @click="onClick" @focus="onClick" @mouseenter="onClick">hi</Button>
+  <Button @click="onClick" @focus="onClick" @mouseenter="onClick" theme="text">hi</Button>
+  <Button @click="onClick" @focus="onClick" @mouseenter="onClick" theme="link">hi</Button>
 </template>
 
 <script lang="ts">
