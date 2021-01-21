@@ -78,14 +78,14 @@ export default {
       box-shadow: none;
       color: inherit;
       &:hover,&:focus{
-        background: darken(white, 5%);;
+        background: darken(white, 5%);
       }
     }
     &.quick-theme-button{
       &.quick-size-big{
         font-size: 24px;
         height: 48px;
-        padding: 0 16px
+        padding: 0 16px;
       }
       &.quick-size-small{
         font-size: 12px;
