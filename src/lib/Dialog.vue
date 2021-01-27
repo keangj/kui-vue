@@ -1,14 +1,21 @@
 <template>
-  <div class="quick-dialog-overlay"></div>
-  <div class="quick-dialog-wrapper">
-    <div class="quick-dialog">
-      <header>title</header>
-      <main>content</main>
-      <footer>
-        <Button>yes</Button>
-        <Button>no</Button>
-      </footer>
-    </div>
+  <div v-if="visible">
+      <div class="quick-dialog-mask" @click="onClickMask"></div>
+      <div class="quick-dialog-wrapper">
+        <div class="quick-dialog">
+          <header>
+            <slot name="title"/>
+            <span @click="close" class="quick-dialog-close"></span>
+          </header>
+          <main>
+            <slot name="content"></slot>
+          </main>
+          <footer>
+            <Button @click="confirm">yes</Button>
+            <Button @click="cancel">no</Button>
+          </footer>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -20,10 +27,43 @@ export default {
     Button
   },
   props: {
-
+    visible: {
+      type: Boolean,
+      default: false
+    },
+    confirm: {
+      type: Function
+    },
+    cancel: {
+      type: Function
+    },
+    maskClosable: {
+      type: Boolean,
+      default: true
+    },
+    title: {
+      type: String,
+      default: '提示'
+    }
   },
   setup (props, context) {
-
+    const close = () => {
+      context.emit('update:visible', false);
+    }
+    const onClickMask = () => {
+      props.maskClosable && close()
+    }
+    const confirm = () => {
+      console.log(props);
+      
+      if (props.confirm?.() !== false) {
+        close()
+      }
+    }
+    const cancel = () => {
+      close()
+    }
+    return { close, confirm, cancel, onClickMask }
   }
 }
 </script>
@@ -37,7 +77,7 @@ export default {
     box-shadow: 0 0 3px fade_out(black, 0.5);
     min-width: 15em;
     max-width: 90%;
-    &-overlay {
+    &-mask {
       position: fixed;
       top: 0;
       left: 0;
