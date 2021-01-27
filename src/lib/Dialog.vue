@@ -1,5 +1,6 @@
 <template>
   <div v-if="visible">
+    <teleport to='body'>
       <div class="quick-dialog-mask" @click="onClickMask"></div>
       <div class="quick-dialog-wrapper">
         <div class="quick-dialog">
@@ -16,6 +17,7 @@
           </footer>
         </div>
       </div>
+    </teleport>
   </div>
 </template>
 
