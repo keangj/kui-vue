@@ -14,6 +14,9 @@
           <li>
             <routerLink to="/doc/dialog">dialog</routerLink>
           </li>
+          <li>
+            <routerLink to="/doc/tabs">tabs</routerLink>
+          </li>
         </ol>
       </aside>
       <main>
