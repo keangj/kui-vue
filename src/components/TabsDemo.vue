@@ -1,7 +1,7 @@
 <template>
-  <Tabs>
-    <Tab title="haha">hi</Tab>
-    <Tab title="hehe">hello</Tab>
+  <Tabs v-model:activeKey="selected">
+    <Tab title="haha" key="h1">hi</Tab>
+    <Tab title="hehe" key="h2">hello</Tab>
   </Tabs>
 </template>
 
@@ -16,7 +16,8 @@ export default {
     Tab
   },
   setup () {
-
+    const selected = ref('h1');
+    return { selected }
   }
 }
 </script>

@@ -1,5 +1,7 @@
 <template>
-  <slot></slot>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 
 <script lang="ts">
@@ -10,6 +12,9 @@ export default {
   props: {
     title: {
       type: String,
+    },
+    key: {
+      type: String
     }
   },
   setup (props, context) {
