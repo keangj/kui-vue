@@ -95,6 +95,7 @@ $border-color: #d9d9d9;
       left: 0;
       bottom: -1px;
       width: 100px;
+      transition: width .3s,left .3s,right .3s;
     }
   }
   &-content {
