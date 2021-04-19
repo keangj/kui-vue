@@ -56,9 +56,9 @@ export default {
     }
     watchEffect(() => {
       const { left: containerLeft } = container.value.getBoundingClientRect();
-      const { left: activeItemLeft } = activeItem.value.getBoundingClientRect();
-      activeBar.value.style.width = `${activeItem.value.getBoundingClientRect().width}px`
-      activeBar.value.style.left = `${activeItemLeft - containerLeft}px`
+      const { left: activeItemLeft, width } = activeItem.value.getBoundingClientRect();
+      activeBar.value.style.width = `${width}px`;
+      activeBar.value.style.left = `${activeItemLeft - containerLeft}px`;
     }, {
       flush: 'post'
     })
