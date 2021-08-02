@@ -59,7 +59,7 @@ export default {
     padding-top: 60px;
     padding-left: 156px;
     @media (max-width: 500px) {
-      padding-left: 0; 
+      padding-left: 0;
     }
   }
 }
@@ -77,7 +77,6 @@ export default {
 aside {
   background: lightblue;
   width: 150px;
-  padding: 16px;
   position: fixed;
   top: 0;
   left: 0;
@@ -85,10 +84,22 @@ aside {
   height: 100%;
   > h2 {
     margin-bottom: 4px;
+    padding: 4px 16px;
   }
   > ol {
     > li {
-      padding: 4px 0;
+      > a {
+        display: block;
+        padding: 4px 16px;
+        text-decoration: none;
+        &:hover {
+          background-color: #6dd0f1;
+          color: #fff;
+        }
+      }
+      .router-link-active {
+        background-color: #fff;
+      }
     }
   }
   main {
