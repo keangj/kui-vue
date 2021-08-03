@@ -1,24 +1,24 @@
 <template>
-    <div class="topnav">
-      <div class="logo">LOGO</div>
-      <div class="toggle-aside" @click="toggleMenu"></div>
-      <ul class="menu">
-        <li>菜单1</li>
-        <li>菜单2</li>
-      </ul>
-    </div>
+  <div class="topnav">
+    <div class="logo">LOGO</div>
+    <div class="toggle-aside" @click="toggleMenu"></div>
+    <ul class="menu">
+      <li>菜单1</li>
+      <li>菜单2</li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts">
 import { inject, Ref } from 'vue'
 export default {
-    setup () {
-      const menuVisible = inject<Ref<boolean>>('menuVisible');
-      const toggleMenu = () => {
-        menuVisible.value = !menuVisible.value;
-      };
-      return { toggleMenu }
-    }
+  setup () {
+    const menuVisible = inject<Ref<boolean>>('menuVisible');
+    const toggleMenu = () => {
+      menuVisible.value = !menuVisible.value;
+    };
+    return { toggleMenu }
+  }
 }
 </script>
 

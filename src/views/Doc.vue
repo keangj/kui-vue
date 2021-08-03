@@ -6,6 +6,9 @@
         <h2>组件列表</h2>
         <ol>
           <li>
+            <routerLink to="/doc/started">started</routerLink>
+          </li>
+          <li>
             <routerLink to="/doc/switch">switch</routerLink>
           </li>
           <li>
