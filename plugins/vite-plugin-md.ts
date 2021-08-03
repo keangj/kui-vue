@@ -1,6 +1,7 @@
+// @ts-nocheck
 import marked from 'marked'
 
-const mdToJs = str => {
+const mdToJs = (str: string) => {
   const content = JSON.stringify(marked(str))
   return `export default ${content}`
 }
