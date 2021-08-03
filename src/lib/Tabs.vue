@@ -27,7 +27,7 @@ export default {
   props: {
     activeKey: {
       type: String,
-      requert: true
+      required: true
     }
   },
   setup (props, context) {
